@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText edtEmail,edtPassword;
-    Button btnLogin, btnCadastrarse;
+    Button btnLogin, btnCadastrarse, btnInicio;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin= findViewById(R.id.btnLogin);
         btnCadastrarse = findViewById(R.id.btnCadastrarse);
+        btnInicio = findViewById(R.id.btnInicio);
 
 
         edtEmail.requestFocus();
@@ -51,7 +52,15 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            Intent intent = new Intent(getApplicationContext(),Cadastro.class);
+            startActivity(intent);
+            }
+        });
+        btnInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Inicial.class);
+                startActivity(intent);
             }
         });
     }
